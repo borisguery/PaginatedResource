@@ -50,7 +50,8 @@ class ResourceFactoryTest extends \PHPUnit_Framework_TestCase
     public function testCustomResource()
     {
         ResourceFactory::addResource('\stdClass', new StubResource(), true);
-        ResourceFactory::create(new \stdClass(), 'anything');
+        $resource = ResourceFactory::create(new \stdClass(), 'anything');
+        $this->assertInstanceOf('Bgy\PaginatedResource\StubResource', $resource);
     }
 
     public function resourceProvider()
