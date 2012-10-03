@@ -210,7 +210,7 @@ Just add:
 ```yaml
       BgyPaginatedResource:
         namespace_prefix: 'Bgy\PaginatedResource\Resource'
-        path: "%kernel.root_dir%/../vendor/borisguery/paginated-resource/contrib/Bgy/PaginatedResource/Resource"
+        path: "%kernel.root_dir%/../vendor/borisguery/paginated-resource/contrib/jms-serializer/Bgy/PaginatedResource/Resource"
 ```
 
 To your `config.yml`.

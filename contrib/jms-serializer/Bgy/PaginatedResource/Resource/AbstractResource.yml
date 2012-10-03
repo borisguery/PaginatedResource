@@ -1,0 +1,7 @@
+Bgy\PaginatedResource\Resource\AbstractResource:
+  exclusion_policy: ALL
+  properties:
+    wrapper:
+      expose: true
+      groups: [details, paging]
+      inline: true
