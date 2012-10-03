@@ -1,0 +1,28 @@
+{
+    "name": "borisguery/paginated-resource",
+    "description": "A resource wrapper to encapsulate paginated resource into REST-like API.",
+    "keywords": ["rest", "pagination", "api"],
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Boris Guéry",
+            "email": "guery.b@gmail.com",
+            "homepage": "http://borisguery.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "pagerfanta/pagerfanta": "*",
+        "doctrine/common": ">2.0"
+    },
+    "suggest": {
+        "pagerfanta/pagerfanta": "Allow to wrap Pagerfanta iterator",
+        "doctrine/common": "Allow to wrap Doctrine2 collections"
+    },
+    "autoload": {
+        "psr-0": { "Bgy" : "src/" }
+    },
+    "minimum-stability": "dev"
+}
