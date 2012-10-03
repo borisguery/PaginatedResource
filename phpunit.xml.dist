@@ -4,7 +4,7 @@
 
     <testsuites>
         <testsuite name="BgyPaginatedResource test suite">
-            <directory suffix="Test.php">./Tests</directory>
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 
