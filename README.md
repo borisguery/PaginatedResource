@@ -1,5 +1,5 @@
-PaginatedResource
-=================
+PaginatedResource  [![Build Status](https://travis-ci.org/borisguery/PaginatedResource.png)](https://travis-ci.org/borisguery/PaginatedResource)
+=======================
 
 Table of contents
 -----------------
