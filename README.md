@@ -1,12 +1,31 @@
 PaginatedResource
 =================
 
+Table of contents
+-----------------
+
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+ 1. [Basic usage](#basic-usage)
+ 2. [Using the `ResourceFactory`](#using-the-resourcefactory)
+ 3. [Using `ResourceFactory` and JMSSerializerBundle](#using-resourcefactory-and-jmsserializerbundle)
+    1. [JMSSerializerBundle config to the rescue](#jmsserializerbundle-config-to-the-rescue)
+ 4. [Custom Resources](#custom-resources)
+    1. [Available Resources](#available-resources)
+    2. [Adding custom Resource](#adding-custom-resource)
+4. [Run the test](#run-the-test)
+5. [Contributing](#contributing)
+6. [Requirements](#requirements)
+7. [Authors](#authors)
+8. [License](#license)
+
 Description
 -----------
 
 A resource wrapper to encapsulate paginated resource into REST-like API.
 
-It is designed to provide paging data along with a resource collection. (See [examples](#example))
+It is designed to provide paging data along with a resource collection.
 
 It is mostly supposed to be used with JMSSerializerBundle but there are no dependencies against it
 and it should work with/without any other Serializer component.
@@ -221,7 +240,7 @@ This will results in:
 ```
 
 ### Custom Resources
-#### Availables Resources
+#### Available Resources
 
 There are currently 4 allowed Resources.
 
