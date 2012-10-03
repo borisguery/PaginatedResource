@@ -71,4 +71,14 @@ class StubResource implements \Bgy\PaginatedResource\Resource\ResourceInterface
     {
         return array();
     }
+
+    public function getDataKey()
+    {
+        return 'key';
+    }
+
+    public function getPaging()
+    {
+        return array();
+    }
 }
