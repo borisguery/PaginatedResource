@@ -5,7 +5,7 @@ php:
 before_script:
   - composer install --dev
 
-script: phpunit
+script: phpunit --coverage-text
 
 notifications:
     email:
