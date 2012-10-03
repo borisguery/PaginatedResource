@@ -16,4 +16,8 @@ namespace Bgy\PaginatedResource\Resource;
 interface ResourceInterface
 {
     public function getData();
+
+    public function getPaging();
+
+    public function getDataKey();
 }
