@@ -3,5 +3,4 @@ Bgy\PaginatedResource\Resource\AbstractResource:
   properties:
     wrapper:
       expose: true
-      groups: [details, paging]
       inline: true
