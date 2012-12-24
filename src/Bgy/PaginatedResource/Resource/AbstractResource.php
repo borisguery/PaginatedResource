@@ -31,7 +31,7 @@ abstract class AbstractResource implements ResourceInterface
 
         $this->wrapper = array(
             $dataKey => $data,
-            'paging' => $this->paging,
+            'paging' => $this->paging->toArray(),
         );
     }
 
