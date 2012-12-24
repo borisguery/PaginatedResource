@@ -13,6 +13,8 @@ namespace Bgy\PaginatedResource\Resource;
 /**
  * @author Boris Guéry <guery.b@gmail.com>
  */
+use Bgy\PaginatedResource\Paging;
+
 class NullResource extends AbstractResource
 {
     public function __construct($dataKey = 'data')
@@ -20,13 +22,7 @@ class NullResource extends AbstractResource
         parent::__construct(
             array(),
             $dataKey,
-            array(
-                'total_item_count'    => 0,
-                'total_page_count'    => 0,
-                'item_count_per_page' => 0,
-                'current_page'        => 0,
-                'current_item_count'  => 0,
-            )
+            new Paging(0, 0, 0, 0, 0)
         );
     }
 }

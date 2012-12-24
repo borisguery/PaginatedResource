@@ -13,6 +13,8 @@ namespace Bgy\PaginatedResource\Resource;
 /**
  * @author Boris Guéry <guery.b@gmail.com>
  */
+use Bgy\PaginatedResource\Paging;
+
 abstract class AbstractResource implements ResourceInterface
 {
     protected $paging = array(
@@ -27,17 +29,11 @@ abstract class AbstractResource implements ResourceInterface
 
     protected $wrapper;
 
-    public function __construct($data, $dataKey = 'data', $paginationData = array())
+    public function __construct($data, $dataKey = 'data', Paging $paginationData)
     {
         $this->dataKey = $dataKey;
 
-        foreach ($paginationData as $key => $value) {
-            if (!in_array($key, array_keys($this->paging))) {
-                unset($paginationData[$key]);
-            }
-        }
-
-        $this->paging = array_merge($this->paging, $paginationData);
+        $this->paging = $paginationData;
 
         $this->wrapper = array(
             $dataKey => $data,
@@ -52,6 +48,9 @@ abstract class AbstractResource implements ResourceInterface
         return $this->wrapper[$key];
     }
 
+    /**
+     * @return Paging
+     */
     public function getPaging()
     {
         return $this->wrapper['paging'];

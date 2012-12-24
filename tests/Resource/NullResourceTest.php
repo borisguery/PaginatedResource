@@ -23,8 +23,7 @@ class NullResourceTest extends \PHPUnit_Framework_TestCase
         $this->assertEmpty($resource->getData());
         $paging = $resource->getPaging();
 
-        foreach ($paging as $key => $value) {
-            $this->assertSame(0, $value);
-        }
+        $emptyPaging = new Paging(0,0,0,0,0);
+        $this->assertEquals($emptyPaging, $paging);
     }
 }
