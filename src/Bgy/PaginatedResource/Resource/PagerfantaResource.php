@@ -11,6 +11,7 @@
 namespace Bgy\PaginatedResource\Resource;
 
 use Pagerfanta\Pagerfanta;
+use Bgy\PaginatedResource\Paging;
 
 /**
  * @author Boris Guéry <guery.b@gmail.com>
@@ -22,12 +23,12 @@ class PagerfantaResource extends AbstractResource
         parent::__construct(
             $paginator->getIterator(),
             $dataKey,
-            array(
-                'total_item_count'    => $paginator->getNbResults(),
-                'total_page_count'    => $paginator->getNbPages(),
-                'item_count_per_page' => $paginator->getMaxPerPage(),
-                'current_page'        => $paginator->getCurrentPage(),
-                'current_item_count'  => count($paginator->getIterator()),
+            new Paging(
+                $paginator->getNbResults(),
+                $paginator->getNbPages(),
+                $paginator->getMaxPerPage(),
+                $paginator->getCurrentPage(),
+                count($paginator->getIterator())
             )
         );
     }

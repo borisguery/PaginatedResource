@@ -38,6 +38,12 @@ class ResourceFactory implements ResourceFactoryInterface
         return self::$availableResources;
     }
 
+    /**
+     * @param $data
+     * @param $dataKey
+     * @return ResourceInterface
+     * @throws UnknownResourceException
+     */
     public static function create($data, $dataKey)
     {
         $resource = null;
