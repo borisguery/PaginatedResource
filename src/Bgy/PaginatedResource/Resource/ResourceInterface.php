@@ -10,6 +10,8 @@
 
 namespace Bgy\PaginatedResource\Resource;
 
+use Bgy\PaginatedResource\Paging;
+
 /**
  * @author Boris Guéry <guery.b@gmail.com>
  */
@@ -17,6 +19,9 @@ interface ResourceInterface
 {
     public function getData();
 
+    /**
+     * @return Paging
+     */
     public function getPaging();
 
     public function getDataKey();
