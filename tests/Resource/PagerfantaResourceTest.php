@@ -63,7 +63,7 @@ class PagerfantaResourceTest extends \PHPUnit_Framework_TestCase
         $resource = new PagerfantaResource($pagerfanta, $key);
         $this->assertSame($key, $resource->getDataKey());
         $this->assertEquals(array_slice($data, 0, 3, true), $resource->getData());
-        $this->assertSame($expected, $resource->getPaging());
+        $this->assertEquals($expected, $resource->getPaging());
     }
 
     public static function dataProvider()
@@ -72,23 +72,23 @@ class PagerfantaResourceTest extends \PHPUnit_Framework_TestCase
             array(
                 array('Foo', 'Bar', 'Baz', 'Fiz', 'Fuz', 'Faz'),
                 'foo',
-                array(
-                    'total_item_count'    => 6,
-                    'total_page_count'    => 2,
-                    'item_count_per_page' => 3,
-                    'current_page'        => 1,
-                    'current_item_count'  => 3,
+                new Paging(
+                    6,
+                    2,
+                    3,
+                    1,
+                    3
                 )
             ),
             array(
                 range(0, 99),
                 'range',
-                array(
-                    'total_item_count'    => 100,
-                    'total_page_count'    => 34,
-                    'item_count_per_page' => 3,
-                    'current_page'        => 1,
-                    'current_item_count'  => 3,
+                new Paging(
+                    100,
+                    34,
+                    3,
+                    1,
+                    3
                 )
             )
         );
