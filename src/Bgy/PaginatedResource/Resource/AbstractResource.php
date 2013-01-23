@@ -17,13 +17,7 @@ use Bgy\PaginatedResource\Paging;
 
 abstract class AbstractResource implements ResourceInterface
 {
-    protected $paging = array(
-        'total_item_count'    => null,
-        'total_page_count'    => null,
-        'item_count_per_page' => null,
-        'current_page'        => null,
-        'current_item_count'  => null,
-    );
+    protected $paging;
 
     protected $dataKey;
 
@@ -37,7 +31,7 @@ abstract class AbstractResource implements ResourceInterface
 
         $this->wrapper = array(
             $dataKey => $data,
-            'paging' => $this->paging,
+            'paging' => $this->paging->toArray(),
         );
     }
 
@@ -53,7 +47,7 @@ abstract class AbstractResource implements ResourceInterface
      */
     public function getPaging()
     {
-        return $this->wrapper['paging'];
+        return $this->paging;
     }
 
     public function getDataKey()

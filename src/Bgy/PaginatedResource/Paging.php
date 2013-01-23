@@ -92,4 +92,15 @@ class Paging
     {
         return (0 === $this->currentItemCount);
     }
+
+    public function toArray()
+    {
+        return array(
+            'total_item_count' => $this->totalItemCount,
+            'total_page_count' => $this->totalPageCount,
+            'item_count_per_page' => $this->itemCountPerPage,
+            'current_page' => $this->currentPage,
+            'current_item_count' => $this->currentItemCount,
+        );
+    }
 }
