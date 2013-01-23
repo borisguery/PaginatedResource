@@ -10,6 +10,7 @@
 
 namespace Bgy\PaginatedResource\Resource;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Pagerfanta\Pagerfanta;
 use Bgy\PaginatedResource\Paging;
 
@@ -20,8 +21,14 @@ class PagerfantaResource extends AbstractResource
 {
     public function __construct(Pagerfanta $paginator, $dataKey = 'data')
     {
+        // Dirty hack to make serializer works (as expected?, at least like it used to)
+        // @see https://github.com/schmittjoh/JMSSerializerBundle/commit/b8d0072bac712df31f6ada43b3ab0d44909a6a95
+        $collection = new ArrayCollection();
+        foreach ($paginator->getIterator() as $item) {
+            $collection->add($item);
+        }
         parent::__construct(
-            $paginator->getIterator(),
+            $collection,
             $dataKey,
             new Paging(
                 $paginator->getNbResults(),
