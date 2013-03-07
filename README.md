@@ -130,7 +130,7 @@ Thanks to the `ResourceFactory` you can dynamically create resource according to
 
 namespace Acme;
 
-use Bgy\PaginatedResource\Resource\ArrayResource;
+use Bgy\PaginatedResource\ResourceFactory;
 
 class ArticlesController {
 
@@ -147,7 +147,7 @@ class ArticlesController {
             ),
         );
 
-        $resource = new ResourceFactory($articles, 'articles');
+        $resource = ResourceFactory::create($articles, 'articles');
 
         echo $this->dependencyInjectionContainer->get('serializer')
             ->serialize($resource, 'json');
@@ -208,9 +208,12 @@ This may be found in `contrib/jms-serializer/PaginatedResource/Resource/Abstract
 Just add:
 
 ```yaml
-      BgyPaginatedResource:
-        namespace_prefix: 'Bgy\PaginatedResource\Resource'
-        path: "%kernel.root_dir%/../vendor/borisguery/paginated-resource/contrib/jms-serializer/Bgy/PaginatedResource/Resource"
+      jms_serializer:
+          metadata:
+              directories:
+                  BgyPaginatedResource:
+                    namespace_prefix: 'Bgy\PaginatedResource\Resource'
+                    path: "%kernel.root_dir%/../vendor/borisguery/paginated-resource/contrib/jms-serializer/Bgy/PaginatedResource/Resource"
 ```
 
 To your `config.yml`.
