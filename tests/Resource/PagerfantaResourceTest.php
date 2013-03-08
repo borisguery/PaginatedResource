@@ -62,7 +62,7 @@ class PagerfantaResourceTest extends \PHPUnit_Framework_TestCase
 
         $resource = new PagerfantaResource($pagerfanta, $key);
         $this->assertSame($key, $resource->getDataKey());
-        $this->assertEquals(array_slice($data, 0, 3, true), $resource->getData());
+        $this->assertEquals(array_slice($data, 0, 3, true), $resource->getData()->toArray());
         $this->assertEquals($expected, $resource->getPaging());
     }
 
