@@ -35,7 +35,7 @@ class PagerfantaResource extends AbstractResource
                 $paginator->getNbPages(),
                 $paginator->getMaxPerPage(),
                 $paginator->getCurrentPage(),
-                count($paginator->getIterator())
+                count($collection)
             )
         );
     }
